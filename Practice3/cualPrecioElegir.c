@@ -1,3 +1,8 @@
+//Introduccion a la Algoritmica y Programacion
+//Ejercicio 2 de la practica 3
+//Realizado por: Cardozo, Valentin
+
+
 #include<stdio.h>
 #include<string.h>
 //Lexico

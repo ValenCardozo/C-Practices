@@ -1,5 +1,5 @@
 //Introduccion a la Algoritmica y Programacion
-//Ejercicio 3 de la practica 6
+//Ejercicio 6 de la practica 3
 //Realizado por: Cardozo, Valentin
 
 #include<stdio.h>
