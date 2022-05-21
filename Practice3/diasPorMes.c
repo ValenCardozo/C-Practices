@@ -5,14 +5,14 @@
 #include<stdio.h>
 #include<string.h>
 
-int mes;
+int mes = 1:12;
 char mensaje[21];
 
 void main(){
 	printf("Ingrese el numero perteneciente a un mes del año (no bisiesto): ");
 	scanf("%d", &mes);
 
-	if ( mes  = 1 || mes == 3 || mes == 5 || mes == 7 || mes == 8 || mes == 10 || mes == 12) {
+	if ( mes == 1 || mes == 3 || mes == 5 || mes == 7 || mes == 8 || mes == 10 || mes == 12) {
 		strcpy(mensaje, "El mes tiene 31 dias");
 	}
 	else if ( mes == 4 || mes == 6 || mes == 9 || mes == 11) {
