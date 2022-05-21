@@ -30,12 +30,12 @@ int main()
     scanf("%d:", &carta2.numero);
     scanf("%s:", carta2.palo);
     printf("Su carta es: %d %s\n", carta2.numero, carta2.palo);
-    
+
     printf("Ingrese tercer carta:");
     scanf("%d:", &carta3.numero);
     scanf("%s:", carta3.palo);
     printf("Su carta es: %d %s\n", carta3.numero, carta3.palo);
- 
+
     result = puntos(carta1, carta2, carta3);
     printf("Flor, Envido o Nada?: %d\n", result);
     return 0;
@@ -47,14 +47,14 @@ int puntos(struct carta carta1, struct carta carta2, struct carta carta3)
     if (strcmp(&carta1.palo, &carta2.palo) == 0 && strcmp(&carta1.palo, &carta3.palo) == 0) {
         return 1;
     }
-    
+
     if (carta1.palo == carta2.palo || carta1.palo == carta3.palo || carta2.palo == carta3.palo) {
         return 2;
     }
-    
+
     if (carta1.palo != carta2.palo && carta1.palo != carta3.palo && carta2.palo != carta3.palo) {
         return 0;
     }
-    
+
     return 9999;
 }

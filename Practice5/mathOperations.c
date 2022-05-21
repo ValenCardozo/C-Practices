@@ -52,14 +52,13 @@ int cube(int a)
 int par(int x)
 {
     int aux;
-    
     aux = x % 2;
-    
+
     if (aux == 0)
     {
         return 1;
     }
-    
+
     return 0;
 }
 
