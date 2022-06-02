@@ -22,7 +22,7 @@ typedef struct{
 
 void obtenerPunto(TPunto *punto);
 void obtenerCircunferencia(TCirculo *circulo);
-int dentroDelCirculo(TPunto punto, TCirculo circulo);
+void dentroDelCirculo(TPunto punto, TCirculo circulo, int *resp);
 void mostrarResultado(int resp);
 
 int main( int argc, char **argv ) {
@@ -32,13 +32,14 @@ int main( int argc, char **argv ) {
 
     obtenerPunto(&punto);
     obtenerCircunferencia(&circunf);
-    resp = dentroDelCirculo(punto, circunf);
+    dentroDelCirculo(punto, circunf, &resp);
     mostrarResultado(resp);
+
     return 0;
 }
 
 void obtenerPunto(TPunto *punto) {
-    printf("Se solicitan las coordenas del punto a validar: \n");
+    printf("Se solicitan las coordenas del punto: \n");
     printf("Ingrese el valor de x: \n");
     scanf("%f", &(punto->x));
     printf("Ingrese el valor de y: \n");
@@ -53,18 +54,17 @@ void obtenerCircunferencia(TCirculo *circulo) {
     scanf("%f", &(circulo->radio));
 }
 
-int dentroDelCirculo(TPunto punto, TCirculo circulo) {
-    int cat1, cat2, hipot, resp;
-    resp = 0;
+void dentroDelCirculo(TPunto punto, TCirculo circulo, int *resp) {
+    int cat1, cat2, hipot;
+
     cat1 = pow(punto.x - circulo.punto.x, 2);
     cat2 = pow(punto.y - circulo.punto.y, 2);
     hipot = sqrt(cat1 + cat2);
 
+    *resp = 0;
     if (hipot < circulo.radio) {
-        resp = 1;
+        *resp = 1;
     }
-
-    return resp;
 }
 
 void mostrarResultado(resp) {
